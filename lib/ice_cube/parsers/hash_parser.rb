@@ -26,7 +26,8 @@ module IceCube
       data = IceCube::FlexibleHash.new(hash.dup)
 
       if (start_date = data.delete(:start_date))
-        warn "IceCube: :start_date is deprecated, please use :start_time at: #{ caller[0] }"
+	# TODO: Find and fix this problem so this line can be restored (and fork killed)
+        # warn "IceCube: :start_date is deprecated, please use :start_time at: #{ caller[0] }"
         data[:start_time] = start_date
       end
 
