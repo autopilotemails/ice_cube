@@ -43,7 +43,7 @@ module IceCube
     def self.ensure_time(time, date_eod = false)
       case time
       when DateTime
-        warn "IceCube: DateTime support is deprecated (please use Time) at: #{ caller[2] }"
+        # warn "IceCube: DateTime support is deprecated (please use Time) at: #{ caller[2] }"
         Time.local(time.year, time.month, time.day, time.hour, time.min, time.sec)
       when Date
         date_eod ? end_of_date(time) : time.to_time
